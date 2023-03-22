@@ -1,0 +1,41 @@
+<div class="report-item__container">
+    <div class="report-item__image">
+        <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjXSRjtp1WcnPdZy3NPqQjThW9-Dh3WNtaLA&usqp=CAU"> -->
+        <img [src]="report.attributes?.thumbnailURL">
+
+        <div class="report-item__preview">
+            <button class="report-item__preview-btn"
+                (click)="openPreviewPopup()">
+                Preview
+            </button>
+        </div>
+    </div>
+
+    <div class="report-item__content">
+        <div class="report-item__info">
+            <div class="report-item__titles">
+                <h4>
+                    {{ report.attributes?.name }}
+                    <img class="report-item__locked"
+                        [src]="'/Optimo.Reports/Images/imgs/locked.svg'">
+                </h4>
+                <img class="report-item__favorite"
+                    (click)="toggleFavorite()"
+                    [src]="report.attributes?.favorite ? '/Optimo.Reports/Images/imgs/heart-filled.svg' : '/Optimo.Reports/Images/imgs/heart.svg'">
+            </div>
+            <p class="report-item__description">
+                {{ report.attributes?.description }}
+            </p>
+        </div>
+        <div class="report-item__actions">
+            <button class="report-item__btn"
+                (click)="viewReport()">
+                View
+                <img class="report-item__btn-img" [src]="'/Optimo.Reports/Images/imgs/next-arrow.svg'">
+            </button>
+            <span *ngIf="report.attributes?.lastViewedTime">
+                Last viewed on {{ report.attributes?.lastViewedTime | date: "dd/MM.YYYY h.mm a" }}
+            </span>
+        </div>
+    </div>
+</div>

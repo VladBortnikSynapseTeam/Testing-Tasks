@@ -1,0 +1,31 @@
+<div class="categories__container">
+    <app-categories-reports-actions></app-categories-reports-actions>
+
+    <div class="categories__actions">
+        <app-reports-filters
+            [isGeneralPage]="true"
+            (onFilterChanged)="categoriesOutput($event)">
+        </app-reports-filters>
+    </div>
+
+    <div class="category-title">
+        <img [src]="'/Optimo.Reports/Images/imgs/categories.svg'">
+        Categories
+    </div>
+
+    <div class="categories__content">
+        <ng-container *ngIf="categories.length; else notFound"></ng-container>
+        <app-category-item class="categories__item"
+            *ngFor="let category of categories"
+            [category]="category">
+        </app-category-item>
+
+        <ng-template #notFound>
+            <div class="categories__empty">
+                <img [src]="'/Optimo.Reports/Images/imgs/not-found.svg'">
+                <h4>No Results Found</h4>
+                <p>We couldn't find what you're looking for</p>
+            </div>
+        </ng-template>
+    </div>
+</div>

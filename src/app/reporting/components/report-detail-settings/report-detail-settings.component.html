@@ -1,0 +1,67 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">
+        {{reportName}}
+        <div class="info" placement="top"
+                            container="body"
+                            [ngbTooltip]="tipRef">
+                            <ng-template #tipRef>
+                                <span class="info__text">This is report name</span>
+                            </ng-template>
+                            <img [src]="'/Optimo.Reports/Images/imgs/info.svg'">
+                        </div>
+    </h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss()"></button>
+</div>
+<div class="modal-body">
+    <div class="settings__content">
+        <div class="settings__desc">
+            Categorize filters on this report as 'Basic' or 'Advanced':
+        </div>
+
+        <div class="settings__table">
+            <div class="settings__table-header">
+                <div class="settings__table-col">Main Filter</div>
+                <div class="settings__table-col">Related Filter</div>
+                <div class="settings__table-col">Basic</div>
+                <div class="settings__table-col">Advanced</div>
+            </div>
+
+            <div class="settings__table-body">
+                <div class="settings__table-body-item"
+                    *ngFor="let item of reportSettingsDetail">
+                    <div class="settings__table-col">
+                        <span *ngIf="item?.type === 'parameterField'">{{ item?.attributes?.displayName }}</span>
+                    </div>
+                    <div class="settings__table-col">
+                        <span *ngIf="item?.type !== 'parameterField'">{{ item?.attributes?.displayName }}</span>
+                    </div>
+                    <div class="settings__table-col radio-btn">
+                        <input type="radio"
+                            [id]="'' + item?.attributes?.name + '1'"
+                            [name]="item?.attributes?.name"
+                            [(ngModel)]="item.attributes.advanced"
+                            [value]="false">
+                    </div>
+                    <div class="settings__table-col radio-btn">
+                        <input type="radio"
+                            [id]="'' + item?.attributes?.name + '2'"
+                            [name]="item?.attributes?.name"
+                            [(ngModel)]="item.attributes.advanced"
+                            [value]="true">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="settings__actions">
+            <button class="settings__btn reset" (click)="reset()">
+                <img class="settings__btn-img" [src]="'/Optimo.Reports/Images/imgs/reset-forward.svg'">
+                Reset to Default
+            </button>
+            <button class="settings__btn save" (click)="save()">
+                <img class="settings__btn-img" [src]="'/Optimo.Reports/Images/imgs/check-save.svg'">
+                Save Changes
+            </button>
+        </div>
+    </div>
+</div>

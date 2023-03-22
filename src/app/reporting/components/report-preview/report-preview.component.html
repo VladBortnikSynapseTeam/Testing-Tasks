@@ -1,0 +1,36 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">
+        {{ report.attributes?.name }}
+        <img [src]="'/Optimo.Reports/Images/imgs/locked.svg'">
+    </h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss()"></button>
+</div>
+<div class="modal-body">
+    <div class="preview__content">
+        <div class="preview__image">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjXSRjtp1WcnPdZy3NPqQjThW9-Dh3WNtaLA&usqp=CAU">
+            <!-- <img [src]="report.attributes?.thumbnail"> -->
+
+            <div class="preview__full"
+                (click)="toggleFullScreen()">
+                <img [src]="isFullied ? '/Optimo.Reports/Images/imgs/fullscreen-exit.svg' : '/Optimo.Reports/Images/imgs/fullscreen.svg'">
+            </div>
+        </div>
+
+        <div class="preview__desc">
+            {{ report.attributes?.description }}
+        </div>
+
+        <div class="preview__actions">
+            <span *ngIf="report.attributes?.lastViewedTime">
+                Last viewed on {{ report.attributes?.lastViewedTime }}
+            </span>
+
+            <button class="preview__btn"
+                (click)="viewReport(); activeModal.dismiss()">
+                View
+                <img class="preview__btn-img" [src]="'/Optimo.Reports/Images/imgs/next-arrow.svg'">
+            </button>
+        </div>
+    </div>
+</div>

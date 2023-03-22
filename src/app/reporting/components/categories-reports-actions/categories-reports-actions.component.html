@@ -1,0 +1,59 @@
+
+<div class="categories-reports__container"
+    [ngClass]="{
+        'third-content': (lastViewedReports.length > 1 && favoriteReports.length < 2)
+    }">
+    <div class="categories-reports__last-viewed slider-content">
+        <div class="category-title">
+            <img [src]="'/Optimo.Reports/Images/imgs/clock.svg'">
+            Last Viewed
+        </div>
+        <swiper
+            *ngIf="lastViewedReports.length > 0"
+            [slidesPerView]="lastViewedReports.length > 1 ? 1.5 : 1"
+            [spaceBetween]="30"
+            [pagination]="{
+                clickable: true
+            }"
+            [navigation]="true"
+            class="mySwiper">
+            <ng-template swiperSlide *ngFor="let report of lastViewedReports">
+                <app-report-list-item
+                    [report]="report">
+                </app-report-list-item>
+            </ng-template>
+        </swiper>
+
+        <div class="categories-reports__not-found" *ngIf="!lastViewedReports.length">
+            <img [src]="'/Optimo.Reports/Images/imgs/clock.svg'">
+            No Reports marked as Last Viewed
+        </div>
+    </div>
+
+    <div class="categories-reports__favorite slider-content">
+        <div class="category-title">
+            <img [src]="'/Optimo.Reports/Images/imgs/heart.svg'">
+            Favourites
+        </div>
+        <swiper
+            *ngIf="favoriteReports.length > 0"
+            [slidesPerView]="favoriteReports.length > 1 ? 1.5 : 1"
+            [spaceBetween]="30"
+            [pagination]="{
+            clickable: true
+            }"
+            [navigation]="true"
+            class="mySwiper">
+            <ng-template swiperSlide *ngFor="let report of favoriteReports">
+                <app-report-list-item
+                    [report]="report">
+                </app-report-list-item>
+            </ng-template>
+        </swiper>
+
+        <div class="categories-reports__not-found" *ngIf="!favoriteReports.length">
+            <img [src]="'/Optimo.Reports/Images/imgs/heart.svg'">
+            No Reports marked as Favourites
+        </div>
+    </div>
+</div>

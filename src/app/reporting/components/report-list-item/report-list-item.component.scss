@@ -1,0 +1,133 @@
+.report-item {
+    &__container {
+        border: 2px solid #b3b3b3;
+        display: flex;
+        max-width: 900px;
+        padding: 15px;
+        min-height: 215px;
+        background-color: #ffffff;
+        height: 100%;
+    }
+
+    &__image {
+        width: 40%;
+        border: 1px solid black;
+        position: relative;
+
+        &:hover {
+            .report-item__preview {
+                visibility: visible;
+                opacity: 1;
+                transition: opacity 0.3s, visibility 0.3s;
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__locked {
+        max-width: 18px;
+        max-height: 18px;
+        position: absolute;
+        right: 3px;
+        cursor: pointer;
+    }
+
+    &__favorite {
+        max-width: 22px;
+        max-height: 22px;
+        cursor: pointer;
+    }
+
+    &__btn-img {
+        max-width: 20px;
+        max-height: 20px;
+        margin-left: 8px;
+    }
+
+    &__actions {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: end;
+        width: 100%;
+
+        & > span {
+            padding-top: 8px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            width: 100%;
+        }
+    }
+
+    &__preview {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, .75);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    &__preview-btn {
+        background: transparent;
+        border: 1px solid #fff;
+        color: #fff;
+        padding: 6px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    &__content {
+        width: 60%;
+        padding-left: 35px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__titles {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        justify-content: space-between;
+
+        h4 {
+            margin: 0;
+            font-size: 20px;
+            color: #2e84e0;
+            font-weight: 600;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            position: relative;
+            padding-right: 25px;
+        }
+    }
+
+    &__description {
+        margin: 0;
+    }
+
+    &__btn {
+        background: #2e84e0;
+        color: #fff;
+        border: none;
+        padding: 8px 20px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+}

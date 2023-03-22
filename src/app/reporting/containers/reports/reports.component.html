@@ -1,0 +1,35 @@
+<div class="reports__container">
+    <div class="reports__actions">
+        <app-reports-filters
+            [isFilters]="true"
+            [reportCategoryId]="reportCategoryId"
+            (onFilterChanged)="changedParams($event)"
+            (onSortChanged)="sortReports($event)">
+        </app-reports-filters>
+    </div>
+
+    <div class="reports__content">
+        <ng-container *ngIf="reports.length; else notFound">
+            <ng-container *ngFor="let report of reports">
+                <div class="category-title">
+                    <img [src]="'/Optimo.Reports/Images/imgs/categories.svg'">
+                    {{ report.reportCategoryName }}
+                </div>
+                <div class="reports__content-items">
+                    <app-report-list-item class="reports__item"
+                        *ngFor="let item of report.reports"
+                        [report]="item">
+                    </app-report-list-item>
+                </div>
+            </ng-container>
+        </ng-container>
+
+        <ng-template #notFound>
+            <div class="reports__empty">
+                <img [src]="'/Optimo.Reports/Images/imgs/not-found.svg'">
+                <h4>No Results Found</h4>
+                <p>We couldn't find what you're looking for</p>
+            </div>
+        </ng-template>
+    </div>
+</div>

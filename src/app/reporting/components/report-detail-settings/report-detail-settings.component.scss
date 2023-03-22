@@ -1,0 +1,121 @@
+.info {
+    display: flex;
+    cursor: pointer;
+    &__text {
+        font-size: 16px;
+    }
+    & > img {
+        width: 24px;
+    }
+}
+
+.modal-title {
+    display: flex;
+    align-items: center;
+}
+
+.settings {
+    &__actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__desc {
+        margin-bottom: 30px;
+    }
+
+    &__btn {
+        background: #ffffff;
+        border: 1px solid #999999;
+        border-radius: 20px;
+        padding: 8px 15px 8px 8px;
+        color: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &.reset {
+            background-color: #999999;
+            color: #ffffff;
+        }
+
+        &.save {
+            background-color: #00ce00;
+            border-color: #00ce00;
+            color: #ffffff;
+        }
+
+        &:first-child {
+            margin-right: 16px;
+        }
+
+        & > img {
+            margin-right: 8px;
+            width: 24px;
+        }
+    }
+
+    &__btn-img {
+        width: 24px;
+        margin-right: 16px;
+    }
+
+    &__table {
+        margin-bottom: 30px;
+    }
+
+    &__table-header {
+        display: flex;
+        align-items: center;
+        border-top: 1px solid #000000;
+        border-bottom: 1px solid #000000;
+    }
+
+    &__table-col {
+        border-left: 1px solid #000000;
+        min-width: 25%;
+        max-width: 25%;
+        padding: 0 4px;
+        height: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        & > span {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        &.radio-btn {
+            justify-content: center;
+
+            & > input {
+                height: 16px;
+                width: 16px;
+                cursor: pointer;
+
+                &:checked {
+                    color: red;
+                    background: red;
+                }
+            }
+        }
+
+        &:last-child {
+            border-right: 1px solid #000000;
+        }
+    }
+
+    &__table-body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__table-body-item {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #000000;
+    }
+}

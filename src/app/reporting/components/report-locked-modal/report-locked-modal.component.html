@@ -1,0 +1,93 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">
+        You are trying to access the '<b>{{ report.attributes?.name }}</b>'
+    </h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss()"></button>
+</div>
+<div class="modal-body">
+    <div class="locked__content">
+        <ng-container
+            *ngTemplateOutlet="mode === 'code' ? codeLocked : (mode === 'login') ? authLocked : previewLocked">
+        </ng-container>
+    </div>
+</div>
+
+<ng-template #previewLocked>
+    <div class="locked__desc">
+        This report contains sensitive data and you will need special access rights to view this report.
+    </div>
+    <div class="locked__desc">
+        A verification code will be sent to the email associated with this account.
+    </div>
+    <div class="locked__actions">
+        <button class="locked__btn"
+            (click)="activeModal.dismiss()">
+            <img class="locked__btn-img" [src]="'/Optimo.Reports/Images/imgs/close.svg'">
+            Cancel
+        </button>
+        <button class="locked__btn"
+            (click)="sendCode()">
+            <img class="locked__btn-img" [src]="'/Optimo.Reports/Images/imgs/check.svg'">
+            Send Code
+        </button>
+    </div>
+</ng-template>
+
+<ng-template #codeLocked>
+    <div class="locked__error" *ngIf="isError">
+        <span>
+            <b>Error:</b> Invalid Verification Code. Please try again
+        </span>
+        <a (click)="sendCode(true)">Resend Code</a>
+    </div>
+    <div class="locked__desc">
+        A verification code has been sent to <b>{{userEmail}}</b>
+    </div>
+    <div class="locked__desc">
+        Please enter the code to access this report
+    </div>
+    <div class="locked__code-content">
+        <input type="text" placeholder="Code" [(ngModel)]="code">
+        <a href="#">More information</a>
+    </div>
+    <div class="locked__actions">
+        <button class="locked__btn"
+            (click)="activeModal.dismiss()">
+            <img class="locked__btn-img" [src]="'/Optimo.Reports/Images/imgs/close.svg'">
+            Cancel
+        </button>
+        <button class="locked__btn"
+            (click)="verifyCode()">
+            <img class="locked__btn-img" [src]="'/Optimo.Reports/Images/imgs/check.svg'">
+            Verify
+        </button>
+    </div>
+</ng-template>
+
+<ng-template #authLocked>
+    <div class="locked__desc">
+        Please enter a valid username and password to access this report:
+    </div>
+
+    <div class="locked__auth">
+        <div class="locked__auth_item">
+            <img class="locked__btn-img" [src]="'/Optimo.Reports/Images/imgs/username.svg'">
+            <input type="text" placeholder="Username" [(ngModel)]="username">
+        </div>
+        <div class="locked__auth_item">
+            <img class="locked__btn-img" [src]="'/Optimo.Reports/Images/imgs/password.svg'">
+            <input type="password" placeholder="Password" [(ngModel)]="password">
+        </div>
+    </div>
+
+    <div class="locked__actions">
+        <button class="locked__btn" (click)="activeModal.dismiss()">
+            <img class="locked__btn-img" [src]="'/Optimo.Reports/Images/imgs/close.svg'">
+            Cancel
+        </button>
+        <button class="locked__btn" (click)="login()">
+            <img class="locked__btn-img" [src]="'/Optimo.Reports/Images/imgs/check.svg'">
+            Verify
+        </button>
+    </div>
+</ng-template>

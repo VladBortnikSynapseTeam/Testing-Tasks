@@ -1,0 +1,35 @@
+.category-item {
+    &__content {
+        max-width: 100%;
+        // max-width: calc(300px - 30px);
+        // max-height: calc(300px - 30px);
+        // height: calc(300px - 30px);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-direction: column;
+        border: 1px solid #999999;
+        background: #ffffff;
+        padding: 30px;
+        cursor: pointer;
+    }
+
+    &__image {
+        margin-bottom: 14px;
+
+        & > img {
+            width: 140px;
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    &__description {
+        font-size: 14px;
+        font-weight: 300;
+    }
+}

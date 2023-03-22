@@ -1,0 +1,51 @@
+<div class="filter__container">
+    <div class="filter__search">
+        <img [src]="'/Optimo.Reports/Images/imgs/search.svg'" (click)="setText()">
+        <ng-container *ngIf="isGeneralPage; else reportSearch">
+            <input
+                id="typeahead-template"
+                [placeholder]="'Search by Category, Report Name or Description'"
+                type="text"
+                class="form-control col bigger-input"
+                [(ngModel)]="searchText"
+                (keyup.enter)="setTextCategories()"
+                (selectItem)="setTextCategories($event.item.reportCategoryId)"
+                [ngbTypeahead]="search"
+                [resultTemplate]="rtGeneral"
+                [focusFirst]="false"
+                [inputFormatter]="formatterGeneral" />
+        </ng-container>
+
+        <ng-template #reportSearch>
+            <input
+                id="typeahead-template"
+                [placeholder]="'Search by Report Name or Description'"
+                type="text"
+                class="form-control col"
+                [(ngModel)]="searchText"
+                (keyup.enter)="setText()"
+                (selectItem)="setText($event.item.attributes.name)"
+                [ngbTypeahead]="search"
+                [resultTemplate]="rt"
+                [focusFirst]="false"
+                [inputFormatter]="formatter" />
+        </ng-template>
+    </div>
+
+    <div class="filter__actions" *ngIf="isFilters">
+        <img (click)="toggleSort()"
+            [src]="isSort ? '/Optimo.Reports/Images/imgs/sort-desc.svg' : '/Optimo.Reports/Images/imgs/sort-asc.svg'"
+            [ngClass]="{'sort-icon': !enableSort}">
+    </div>
+</div>
+
+<ng-template #rtGeneral let-r="result" let-t="term">
+    <img [src]="'/Optimo.Reports/Images/imgs/search.svg'">
+    <ngb-highlight [result]="r.reportCategoryName" [term]="t"></ngb-highlight>
+</ng-template>
+
+<ng-template #rt let-r="result" let-t="term">
+    <img [src]="'/Optimo.Reports/Images/imgs/search.svg'">
+    <ngb-highlight [result]="r.attributes.name" [term]="t"></ngb-highlight>
+    <span> - {{ r.attributes.reportCategoryName }}</span>
+</ng-template>

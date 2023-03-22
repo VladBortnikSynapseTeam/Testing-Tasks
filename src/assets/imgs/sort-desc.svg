@@ -1,0 +1,15 @@
+<svg width="1000" height="1000" xmlns="http://www.w3.org/2000/svg" version="1.1" xml:space="preserve" stroke="null">
+ <g stroke="null">
+  <title stroke="null">Layer 1</title>
+  <path class="st0" d="m0.35,700.25912c0,0 0,0 0,0c60.52,-0.00999 217.75,-0.00999 217.75,-0.00999l-7.13,-700.24913l72.03,0l0,999.00011c0,0 -170.6,-298.49124 -282.65,-298.74099z" fill="#29ABE2" id="svg_1" stroke="null"/>
+  <path class="st1" d="m565.35,701.5627c0,0 0,-0.01003 0,0c-60.47,-0.01003 -217.58,-0.01003 -217.58,-0.01003l7.12,-701.9025l-71.98,0l0,1001.34989c0.01,0 170.47,-299.18668 282.44,-299.43736z" fill="#0071BC" id="svg_2" stroke="null"/>
+  <rect x="427.46" y="891.75" class="st2" width="573.51" height="108.25" stroke-miterlimit="10" id="svg_3" stroke="#000000"/>
+  <rect x="473.57" y="759.13" class="st3" width="525.93" height="108.25" fill="#333333" stroke-miterlimit="10" id="svg_4" stroke="#333333"/>
+  <rect x="528.03" y="626.52" class="st4" width="471.47" height="108.25" fill="#4D4D4D" stroke-miterlimit="10" id="svg_5" stroke="#4D4D4D"/>
+  <rect x="565.35" y="493.91" class="st5" width="435.15" height="108.25" fill="#666666" stroke-miterlimit="10" id="svg_6" stroke="#666666"/>
+  <rect x="621.33" y="361.3" class="st6" width="379.17" height="108.25" fill="#808080" stroke-miterlimit="10" id="svg_7" stroke="#808080"/>
+  <rect x="685.31" y="228.69" class="st7" width="315.19" height="108.25" fill="#999999" stroke-miterlimit="10" id="svg_8" stroke="#999999"/>
+  <rect x="757.28" y="96.08" class="st8" width="243.22" height="108.25" fill="#B3B3B3" stroke-miterlimit="10" id="svg_9" stroke="#B3B3B3"/>
+ </g>
+
+</svg>

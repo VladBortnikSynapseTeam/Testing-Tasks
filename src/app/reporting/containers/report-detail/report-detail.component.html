@@ -1,0 +1,132 @@
+<p class="alert" *ngIf="managerNotification">
+    <ngb-alert [dismissible]="true">
+        <strong>Warning!</strong> Manager will be notified about this report visit.
+    </ngb-alert>
+</p>
+<div class="report-detail__container">
+    <h4 class="report-detail__title" *ngIf="report">
+        {{report.attributes?.name}}
+    </h4>
+
+    <div [ngClass]="{'report-detail__filter': fields.isBasic, 'report-detail__filter-advanced': !fields.isBasic}"
+        *ngFor="let fields of reportDetailExecuteData">
+        <div class="report-detail__subtitle" *ngIf="fields.isBasic">
+            <span>{{ fields?.title }}</span>
+            <ng-container *ngIf="fields?.isBasic">
+                <div class="report-detail__header-actions">
+                    <button class="report-detail__btn reset"
+                        (click)="resetFilters()">
+                        <img [src]="'/Optimo.Reports/Images/imgs/trash.svg'">
+                        Reset Filters
+                    </button>
+    
+                    <div class="switch-content">
+                        <label class="switch">
+                            <input type="checkbox"
+                                [(ngModel)]="useLastFilters"
+                                (change)="toggleUseLastFilters()"/>
+                            <span></span>
+                        </label>
+                        Use Last Filters
+                    </div>
+    
+                    <button class="report-detail__btn"
+                        (click)="openSettingsPopup()">
+                        <img [src]="'/Optimo.Reports/Images/imgs/open-in-browser.svg'">
+                    </button>
+    
+                    <button class="report-detail__btn"
+                        (click)="toggleFavorite()">
+                        <img [src]="(report && report.attributes && report.attributes.favorite) ? '/Optimo.Reports/Images/imgs/heart-filled.svg' : '/Optimo.Reports/Images/imgs/heart.svg'">
+                    </button>
+                </div>
+            </ng-container>
+        </div>
+
+        <ngb-accordion *ngIf="!fields.isBasic; else fieldsTemplate" #filterAccordion [animation]="false" #acc="ngbAccordion" activeIds="ngb-panel-0">
+            <ngb-panel title="Advanced">
+                <ng-template ngbPanelContent>
+                    <ng-container
+                        *ngTemplateOutlet="fieldsTemplate">
+                    </ng-container>
+                </ng-template>
+            </ngb-panel>
+        </ngb-accordion>
+
+        <ng-template #fieldsTemplate>
+            <div class="report-detail__content">
+                <div class="report-detail__form-item" *ngFor="let item of fields.data">
+                    <div class="report-detail__form-label">
+                        <div class="info" placement="top"
+                            container="body"
+                            [ngbTooltip]="tipRef">
+                            <ng-template #tipRef>
+                                <span class="info__text">{{item.attributes.description}}</span>
+                            </ng-template>
+                            <img [src]="'/Optimo.Reports/Images/imgs/info.svg'">
+                        </div>
+                        <span>{{ item?.attributes?.displayName }}</span>
+                    </div>
+
+                    <ng-container *ngIf="item?.attributes?.dbDataType === 'bit'">
+                        <input type="checkbox" [(ngModel)]="item.attributes.value" class="input-checkbox">
+                    </ng-container>
+
+                    <ng-container *ngIf="item?.attributes?.dbDataType === 'Date'">
+                        <input type="date" [ngModel]="item.attributes.value | date:'yyyy-MM-dd'">
+                    </ng-container>
+
+                    <ng-container
+                        *ngIf="item?.attributes?.dbDataType === 'DateTime'">
+                        <!-- <input [ngxTimepicker]="picker" [value]="item.attributes.value">
+                        <ngx-material-timepicker #picker></ngx-material-timepicker> -->
+                    </ng-container>
+
+                    <ng-container *ngIf="
+                        item?.attributes?.dbDataType === 'Varchar' ||
+                        item?.attributes?.dbDataType === 'varchar' ||
+                        item?.attributes?.dbDataType === 'nvarchar' ||
+                        item?.attributes?.dbDataType === 'NVarchar'">
+                        <ng-container *ngIf="!item?.attributes?.dataSource; else dataMultiselect">
+                            <input type="text" [(ngModel)]="item.attributes.value" class="form-control">
+                        </ng-container>
+
+                        <ng-template #dataMultiselect>
+                            <ng-container
+                            *ngIf="item.attributes && item.attributes.name">
+                                <!-- <ngx-bootstrap-multiselect
+                                    [name]="item.attributes.name"
+                                    [options]="getMultiselectItems(selectLists[item.attributes.name])"
+                                    [(ngModel)]="item.attributes.value">
+                                </ngx-bootstrap-multiselect> -->
+                            </ng-container>
+                        </ng-template>
+                    </ng-container>
+
+                    <ng-container *ngIf="
+                        item?.attributes?.dbDataType === 'int' ||
+                        item?.attributes?.dbDataType === 'Integer'">
+                        <select [(ngModel)]="item.attributes.value" class="form-select">
+                            <option *ngFor="let item of selectLists[item.attributes.name]"
+                                [value]="item.id">
+                                {{ item.attributes.name }}
+                            </option>
+                        </select>
+                    </ng-container>
+                </div>
+            </div>
+        </ng-template>
+
+        <ng-container *ngIf="!fields?.isBasic">
+            <div class="report-detail__actions">
+                <button class="report-detail__btn reset"
+                        (click)="executeReport()">
+                        <!-- <img [src]="'/Optimo.Reports/Images/imgs/trash.svg'"> -->
+                        Execute
+                    </button>
+            </div>
+        </ng-container>
+    </div>
+
+    <!-- <opt-report-viewer [reportExportTable]="reportExportTable" *ngIf="this.reportExportTable"></app-report-viewer> -->
+</div>
