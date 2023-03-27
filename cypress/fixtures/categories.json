@@ -1,0 +1,89 @@
+
+{
+        "meta": {
+            "apiId": "123123"
+        },
+        "data": [
+            {
+                "type": "reportCategory",
+                "id": "1",
+                "attributes": {
+                    "name": "Sales",
+                    "insertedUser": "Sa",
+                    "insertedTime": "6/2/2011 4:03:32 PM"
+                }
+            },
+            {
+                "type": "reportCategory",
+                "id": "2",
+                "attributes": {
+                    "name": "Finance",
+                    "insertedUser": "sa",
+                    "insertedTime": "5/27/2012 11:14:51 PM"
+                }
+            },
+            {
+                "type": "reportCategory",
+                "id": "3",
+                "attributes": {
+                    "name": "Events",
+                    "insertedUser": "sa",
+                    "insertedTime": "5/27/2012 11:14:51 PM"
+                }
+            },
+            {
+                "type": "reportCategory",
+                "id": "4",
+                "attributes": {
+                    "name": "Fulfilment",
+                    "insertedUser": "sa",
+                    "insertedTime": "5/27/2012 11:14:51 PM"
+                }
+            },
+            {
+                "type": "reportCategory",
+                "id": "5",
+                "attributes": {
+                    "name": "Miscellaneous",
+                    "insertedUser": "sa",
+                    "insertedTime": "5/27/2012 11:14:51 PM"
+                }
+            },
+            {
+                "type": "reportCategory",
+                "id": "6",
+                "attributes": {
+                    "name": "CRM",
+                    "insertedUser": "sa",
+                    "insertedTime": "5/27/2012 11:14:51 PM"
+                }
+            },
+            {
+                "type": "reportCategory",
+                "id": "7",
+                "attributes": {
+                    "name": "Marketing",
+                    "insertedUser": "sa",
+                    "insertedTime": "4/7/2017 6:40:28 PM"
+                }
+            },
+            {
+                "type": "reportCategory",
+                "id": "8",
+                "attributes": {
+                    "name": "User",
+                    "insertedUser": "sa",
+                    "insertedTime": "4/7/2017 6:40:28 PM"
+                }
+            },
+            {
+                "type": "reportCategory",
+                "id": "9",
+                "attributes": {
+                    "name": "Frequently Used",
+                    "insertedUser": "sa",
+                    "insertedTime": "4/7/2017 6:40:28 PM"
+                }
+            }
+        ]
+}
