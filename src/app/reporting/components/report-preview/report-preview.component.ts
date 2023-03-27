@@ -34,11 +34,6 @@ export class ReportPreviewComponent implements OnInit {
   }
 
   viewReport(): void {
-    // if (this.report.id) {
-    //   this.openAuthLockedPopup();
-    //   this.activeModal.dismiss();
-    //   return;
-    // }
     this.router.navigate([`/reports/${this.report?.id}`]);
   }
 

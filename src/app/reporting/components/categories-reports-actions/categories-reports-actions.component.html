@@ -5,7 +5,7 @@
     }">
     <div class="categories-reports__last-viewed slider-content">
         <div class="category-title">
-            <img [src]="'/Optimo.Reports/Images/imgs/clock.svg'">
+            <img [src]="'../../../../../../assets/imgs//clock.svg'">
             Last Viewed
         </div>
         <swiper
@@ -25,14 +25,14 @@
         </swiper>
 
         <div class="categories-reports__not-found" *ngIf="!lastViewedReports.length">
-            <img [src]="'/Optimo.Reports/Images/imgs/clock.svg'">
+            <img [src]="'../../../../../../assets/imgs//clock.svg'">
             No Reports marked as Last Viewed
         </div>
     </div>
 
     <div class="categories-reports__favorite slider-content">
         <div class="category-title">
-            <img [src]="'/Optimo.Reports/Images/imgs/heart.svg'">
+            <img [src]="'../../../../../../assets/imgs//heart.svg'">
             Favourites
         </div>
         <swiper
@@ -52,7 +52,7 @@
         </swiper>
 
         <div class="categories-reports__not-found" *ngIf="!favoriteReports.length">
-            <img [src]="'/Optimo.Reports/Images/imgs/heart.svg'">
+            <img [src]="'../../../../../../assets/imgs//heart.svg'">
             No Reports marked as Favourites
         </div>
     </div>

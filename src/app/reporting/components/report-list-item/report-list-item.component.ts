@@ -36,7 +36,6 @@ export class ReportListItemComponent implements OnInit, OnDestroy {
       this.openAuthLockedPopup();
       return;
     }
-    this.openAuthLockedPopup();
     this.router.navigate([`/reports/${this.report?.id}`]);
   }
 
@@ -77,9 +76,6 @@ export class ReportListItemComponent implements OnInit, OnDestroy {
       .subscribe(
         (result) => {
           console.log(result);
-        },
-        (err) => {
-          this.report.attributes!.favorite = !this.report.attributes!.favorite;
         }
       );
   }

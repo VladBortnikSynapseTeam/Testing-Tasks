@@ -1,0 +1,21 @@
+{
+    "meta": {
+        "apiId": "123123"
+    },
+    "data": [{
+        "type": "report",
+        "id": "47",
+        "attributes": {
+            "name": "Sales by Business Area and Package",
+            "description": "A detail list contains sales information per business area and package along with a sales comparison on different sales periods",
+            "active": true,
+            "code": "",
+            "physicalFileName": "Sales by Business Area and Product",
+            "reportCategoryId": "1",
+            "reportCategoryName": "Sales",
+            "customReport": false
+        }
+      }
+    ]
+    
+}

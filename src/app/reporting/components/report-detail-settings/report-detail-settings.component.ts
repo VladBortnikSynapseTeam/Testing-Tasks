@@ -18,7 +18,7 @@ export class ReportDetailSettingsComponent implements OnInit {
   }
 
   reset(): void {
-    this.activeModal.close();
+    this.activeModal.close(this.reportSettingsDetail);
   }
 
   save(): void {

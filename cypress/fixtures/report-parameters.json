@@ -1,0 +1,176 @@
+{
+    "meta": {
+        "apiId": "123123"
+    },
+    "data": {
+        "attributes": {
+            "data": {
+                "table": []
+            }
+        },
+        "data": {
+            "id": "47",
+            "type": "report",
+            "attributes": {
+                "favorite": false,
+                "name": " Sales by Business Area and Package "
+            }
+        },
+        "included": [
+            {
+                "type": "parameterField",
+                "id": "1",
+                "attributes": {
+                    "name": "businessArea",
+                    "displayName": "Business Area",
+                    "dbDataType": "bit",
+                    "dataTypeId": "1",
+                    "sequence": "1",
+                    "advanced": false,
+                    "description": "test",
+                    "defaultvalue": "2",
+                    "lastUsedValue": "3"
+                }
+            },
+            {
+                "type": "parameterField",
+                "id": "2",
+                "attributes": {
+                    "name": "venue",
+                    "displayName": "Venue",
+                    "dbDataType": "Date",
+                    "dataTypeId": "1",
+                    "sequence": "2",
+                    "advanced": false,
+                    "description": "test",
+                    "defaultvalue": "370",
+                    "lastUsedValue": "371"
+                }
+            },
+            {
+                "type": "parameterField",
+                "id": "3",
+                "attributes": {
+                    "name": "bookingStartStatus",
+                    "displayName": "Booking Invoice Report",
+                    "dbDataType": "Varchar",
+                    "dataTypeId": "2",
+                    "sequence": "3",
+                    "advanced": true,
+                    "description": "test",
+                    "defaultvalue": "57",
+                    "lastUsedValue": "80"
+                }
+            },
+            {
+                "type": "parameterField",
+                "id": "4",
+                "attributes": {
+                    "name": "bookingEndStatus",
+                    "displayName": "Booking End Status",
+                    "dbDataType": "int",
+                    "dataTypeId": "2",
+                    "sequence": "4",
+                    "advanced": true,
+                    "description": "test",
+                    "defaultvalue": "80",
+                    "lastUsedValue": "57"
+                }
+            },
+            {
+                "type": "parameterField",
+                "id": "5",
+                "attributes": {
+                    "name": "bookingStartDate",
+                    "displayName": "Booking Start Date",
+                    "dbDataType": "bit",
+                    "dataTypeId": "3",
+                    "sequence": "5",
+                    "advanced": false,
+                    "description": "test",
+                    "defaultvalue": "2022-05-31T08:02:51.6027688+01:03",
+                    "lastUsedValue": "2022-05-31T08:02:51.6027688+01:03"
+                }
+            },
+            {
+                "type": "parameterField",
+                "id": "6",
+                "attributes": {
+                    "name": "BookingEndDate",
+                    "displayName": "Booking End Date",
+                    "dbDataType": "bit",
+                    "dataTypeId": "3",
+                    "sequence": "6",
+                    "advanced": true,
+                    "description": "test",
+                    "defaultvalue": "2021-01-21T08:02:51.6027688+01:00",
+                    "lastUsedValue": "2022-05-31T08:02:51.6027688+01:00"
+                }
+            },
+            {
+                "type": "parameterField",
+                "id": "7",
+                "attributes": {
+                    "name": "staffMamber",
+                    "displayName": "Staff Member",
+                    "dbDataType": "bit",
+                    "dataTypeId": "4",
+                    "sequence": "7",
+                    "advanced": true,
+                    "description": "test",
+                    "defaultvalue": "0",
+                    "lastUsedValue": "23"
+                }
+            },
+            {
+                "type": "parameterField",
+                "id": "8",
+                "attributes": {
+                    "name": "excludeIntermediateStatuses",
+                    "displayName": "Exclude Intermediate Statuses",
+                    "dbDataType": "bit",
+                    "dataTypeId": "5",
+                    "sequence": "8",
+                    "advanced": false,
+                    "description": "test",
+                    "defaultvalue": "",
+                    "lastUsedValue": true
+                }
+            },
+            {
+                "type": "parameterField",
+                "id": "9",
+                "attributes": {
+                    "name": "excludeIntermediateStatuses",
+                    "displayName": "Booking Start Time",
+                    "dbDataType": "bit",
+                    "dataTypeId": "5",
+                    "sequence": "8",
+                    "advanced": false,
+                    "description": "test",
+                    "defaultvalue": "11:10",
+                    "lastUsedValue": "15:10"
+                }
+            },
+            {
+                "type": "parameterField",
+                "id": "10",
+                "attributes": {
+                    "name": "excludeIntermediateStatuses",
+                    "displayName": "Booking End Time",
+                    "dbDataType": "DateTime",
+                    "dataTypeId": "5",
+                    "sequence": "8",
+                    "advanced": false,
+                    "description": "test",
+                    "defaultvalue": "10:35",
+                    "lastUsedValue": "14:35"
+                }
+            }
+          
+        ]
+    }
+    
+    
+}
+

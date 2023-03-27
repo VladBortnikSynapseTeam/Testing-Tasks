@@ -16,7 +16,7 @@
                 <div class="report-detail__header-actions">
                     <button class="report-detail__btn reset"
                         (click)="resetFilters()">
-                        <img [src]="'/Optimo.Reports/Images/imgs/trash.svg'">
+                        <img [src]="'../../../../../../assets/imgs//trash.svg'">
                         Reset Filters
                     </button>
     
@@ -32,12 +32,12 @@
     
                     <button class="report-detail__btn"
                         (click)="openSettingsPopup()">
-                        <img [src]="'/Optimo.Reports/Images/imgs/open-in-browser.svg'">
+                        <img [src]="'../../../../../../assets/imgs//open-in-browser.svg'">
                     </button>
     
                     <button class="report-detail__btn"
                         (click)="toggleFavorite()">
-                        <img [src]="(report && report.attributes && report.attributes.favorite) ? '/Optimo.Reports/Images/imgs/heart-filled.svg' : '/Optimo.Reports/Images/imgs/heart.svg'">
+                        <img [src]="(report && report.attributes && report.attributes.favorite) ? '../../../../../../assets/imgs//heart-filled.svg' : '../../../../../../assets/imgs//heart.svg'">
                     </button>
                 </div>
             </ng-container>
@@ -63,7 +63,7 @@
                             <ng-template #tipRef>
                                 <span class="info__text">{{item.attributes.description}}</span>
                             </ng-template>
-                            <img [src]="'/Optimo.Reports/Images/imgs/info.svg'">
+                            <img [src]="'../../../../../../assets/imgs//info.svg'">
                         </div>
                         <span>{{ item?.attributes?.displayName }}</span>
                     </div>
@@ -78,8 +78,8 @@
 
                     <ng-container
                         *ngIf="item?.attributes?.dbDataType === 'DateTime'">
-                        <!-- <input [ngxTimepicker]="picker" [value]="item.attributes.value">
-                        <ngx-material-timepicker #picker></ngx-material-timepicker> -->
+                        <input [ngxTimepicker]="picker" [value]="item.attributes.value">
+                        <ngx-material-timepicker #picker></ngx-material-timepicker>
                     </ng-container>
 
                     <ng-container *ngIf="
@@ -121,7 +121,7 @@
             <div class="report-detail__actions">
                 <button class="report-detail__btn reset"
                         (click)="executeReport()">
-                        <!-- <img [src]="'/Optimo.Reports/Images/imgs/trash.svg'"> -->
+                        <!-- <img [src]="'../../../../../../assets/imgs//trash.svg'"> -->
                         Execute
                     </button>
             </div>

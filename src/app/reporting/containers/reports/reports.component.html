@@ -12,7 +12,7 @@
         <ng-container *ngIf="reports.length; else notFound">
             <ng-container *ngFor="let report of reports">
                 <div class="category-title">
-                    <img [src]="'/Optimo.Reports/Images/imgs/categories.svg'">
+                    <img [src]="'../../../../../../assets/imgs//categories.svg'">
                     {{ report.reportCategoryName }}
                 </div>
                 <div class="reports__content-items">
@@ -26,7 +26,7 @@
 
         <ng-template #notFound>
             <div class="reports__empty">
-                <img [src]="'/Optimo.Reports/Images/imgs/not-found.svg'">
+                <img [src]="'../../../../../../assets/imgs//not-found.svg'">
                 <h4>No Results Found</h4>
                 <p>We couldn't find what you're looking for</p>
             </div>

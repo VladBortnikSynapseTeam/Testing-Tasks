@@ -90,7 +90,7 @@ export class ReportDetailComponent implements OnInit, OnDestroy {
         }
       }
     }
-    this.apiReportingService.updateCannedReportsById(this.report.id!, reponse)
+    this.apiReportingService.updateCannedReportsById(this.report.id, reponse)
       .pipe(takeUntil(this.destroyComponent$))
       .subscribe(
         (result) => {
@@ -130,6 +130,7 @@ export class ReportDetailComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroyComponent$))
       .subscribe(
         (response) => {
+          console.log(response);
           this.reportExportTable = response.attributes.data.table;
         }
       )
@@ -245,6 +246,7 @@ export class ReportDetailComponent implements OnInit, OnDestroy {
   }
   
   private getSelectsData(reportItems: any[]): void {
+    console.log(reportItems,'REPORT ITEMS')
     const requests: { key: string, method: Observable<any> }[] = [];
     reportItems.forEach(field => {
       if (field.attributes.dataSource) {

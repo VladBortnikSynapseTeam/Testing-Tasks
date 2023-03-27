@@ -41,7 +41,8 @@
               "physicalFileName": "Gross Profit",
               "reportCategoryId": "1",
               "reportCategoryName": "Sales",
-              "customReport": false
+              "customReport": false,
+              "2FARequired": true
           }
       },
       {
@@ -121,6 +122,7 @@
               "name": "Contact",
               "description": "A list contains the contacts with frequent interactions along with some contact information",
               "active": true,
+              "managerApproval": true,
               "code": "",
               "physicalFileName": "Contact",
               "reportCategoryId": "1",

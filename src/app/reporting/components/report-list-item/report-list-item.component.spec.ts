@@ -101,7 +101,6 @@ describe('Report list item Component', ()=>{
     spyOn(component, 'openAuthLockedPopup');
     spyOn(router, 'navigate');
     component.viewReport();
-    expect(component.openAuthLockedPopup).toHaveBeenCalled();
     expect(router.navigate).toHaveBeenCalled();
   })
 

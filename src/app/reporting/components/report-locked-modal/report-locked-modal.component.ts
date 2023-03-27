@@ -101,7 +101,7 @@ export class ReportLockedModalComponent implements OnInit, OnDestroy {
       .subscribe(
         (data) => {
           console.log(data,'user-login data');
-          //this.router.navigate([`/reports/${this.report?.id}`])
+          this.router.navigate([`/reports/${this.report?.id}`])
           this.activeModal.dismiss();
         },
         (error) => {

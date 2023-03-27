@@ -1,6 +1,6 @@
 <div class="filter__container">
     <div class="filter__search">
-        <img [src]="'/Optimo.Reports/Images/imgs/search.svg'" (click)="setText()">
+        <img [src]="'../../../../../../assets/imgs//search.svg'" (click)="setText()">
         <ng-container *ngIf="isGeneralPage; else reportSearch">
             <input
                 id="typeahead-template"
@@ -34,18 +34,18 @@
 
     <div class="filter__actions" *ngIf="isFilters">
         <img (click)="toggleSort()"
-            [src]="isSort ? '/Optimo.Reports/Images/imgs/sort-desc.svg' : '/Optimo.Reports/Images/imgs/sort-asc.svg'"
+            [src]="isSort ? '../../../../../../assets/imgs//sort-desc.svg' : '../../../../../../assets/imgs//sort-asc.svg'"
             [ngClass]="{'sort-icon': !enableSort}">
     </div>
 </div>
 
 <ng-template #rtGeneral let-r="result" let-t="term">
-    <img [src]="'/Optimo.Reports/Images/imgs/search.svg'">
+    <img [src]="'../../../../../../assets/imgs//search.svg'">
     <ngb-highlight [result]="r.reportCategoryName" [term]="t"></ngb-highlight>
 </ng-template>
 
 <ng-template #rt let-r="result" let-t="term">
-    <img [src]="'/Optimo.Reports/Images/imgs/search.svg'">
+    <img [src]="'../../../../../../assets/imgs//search.svg'">
     <ngb-highlight [result]="r.attributes.name" [term]="t"></ngb-highlight>
     <span> - {{ r.attributes.reportCategoryName }}</span>
 </ng-template>
