@@ -47,10 +47,10 @@ describe('Optimo Reports Page', ()=>{
 
     it('should change icon from asc to desc', ()=>{
         cy.get('.filter__actions > img')
-            .should('have.attr', 'src').and('include','../../../../../../assets/imgs//sort-asc.svg')
+            .should('have.attr', 'src').and('include','../../../../../../assets/imgs/sort-asc.svg')
         cy.get('.filter__actions > img')
             .dblclick()
         cy.get('.filter__actions > img')
-            .should('have.attr', 'src').and('include','../../../../../../assets/imgs//sort-desc.svg')
+            .should('have.attr', 'src').and('include','../../../../../../assets/imgs/sort-desc.svg')
         })
 });

@@ -1,7 +1,7 @@
 <div class="modal-header">
     <h4 class="modal-title" id="modal-basic-title">
         {{ report.attributes?.name }}
-        <img [src]="'../../../../../../assets/imgs//locked.svg'">
+        <img [src]="'../../../../../../assets/imgs/locked.svg'">
     </h4>
     <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss()"></button>
 </div>
@@ -13,7 +13,7 @@
 
             <div class="preview__full"
                 (click)="toggleFullScreen()">
-                <img [src]="isFullied ? '../../../../../../assets/imgs//fullscreen-exit.svg' : '../../../../../../assets/imgs//fullscreen.svg'">
+                <img [src]="isFullied ? '../../../../../../assets/imgs/fullscreen-exit.svg' : '../../../../../../assets/imgs/fullscreen.svg'">
             </div>
         </div>
 
@@ -29,7 +29,7 @@
             <button class="preview__btn"
                 (click)="viewReport(); activeModal.dismiss()">
                 View
-                <img class="preview__btn-img" [src]="'../../../../../../assets/imgs//next-arrow.svg'">
+                <img class="preview__btn-img" [src]="'../../../../../../assets/imgs/next-arrow.svg'">
             </button>
         </div>
     </div>

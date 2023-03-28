@@ -12,7 +12,7 @@ describe('Home page containers', ()=>{
         cy.wait('@getFavoriteReports');
 
         cy.get('.categories-reports__not-found').should('exist').and('have.text', ' No Reports marked as Favourites ')
-        cy.get('.categories-reports__not-found > img').should('have.attr','src').and('include','../../../../../../assets/imgs//heart.svg')
+        cy.get('.categories-reports__not-found > img').should('have.attr','src').and('include','../../../../../../assets/imgs/heart.svg')
     })
 
     it('should render last viewed container correctly if on reports', ()=>{
@@ -28,6 +28,6 @@ describe('Home page containers', ()=>{
         cy.wait('@getFavoriteReports');
 
         cy.get('.categories-reports__not-found').should('exist').and('have.text', ' No Reports marked as Last Viewed ')
-        cy.get('.categories-reports__not-found > img').should('have.attr','src').and('include','../../../../../../assets/imgs//clock.svg')
+        cy.get('.categories-reports__not-found > img').should('have.attr','src').and('include','../../../../../../assets/imgs/clock.svg')
     })
 })

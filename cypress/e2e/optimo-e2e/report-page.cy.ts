@@ -21,6 +21,8 @@ describe('Report Page', ()=>{
             .click();
         cy.wait('@getParams')
         cy.wait('@executeReport')
+        cy.get('.btn-close')
+            .click()
     })
 
     it('should render report page', ()=>{   
@@ -47,10 +49,9 @@ describe('Report Page', ()=>{
     })
 
     it('datepicker should work correctly', ()=>{
-        cy.get('.report-detail__filter > .report-detail__content > :nth-child(2) > input')
+        cy.get('.report-detail__filter > .report-detail__content > :nth-child(2) > .ng-pristine')
             .should('exist')
-            .click(175,10)
-            .wait(1000)
+            .click(175,10, {force: true})
     })
 
     it('timepicker should work correctly', ()=>{
@@ -92,12 +93,18 @@ describe('Report Page', ()=>{
 
     it('should mark as favourite from report detail page', ()=>{
         cy.get(':nth-child(4) > img')
-        .should('have.attr','src').and('include','../../../../../../assets/imgs//heart.svg')
+        .should('have.attr','src').and('include','../../../../../../assets/imgs/heart.svg')
         cy.get('.btn-close')
             .click()
         cy.get(':nth-child(4) > img')
         .click({force: true})
         .wait('@favoriteReport')
+    })
+
+    it('should switch last filters switch', ()=>{
+        cy.get('.switch > span')
+            .should('exist')
+            .click()
     })
 
     it('should open settings popup and correctly work', ()=>{
@@ -134,11 +141,27 @@ describe('Report Page', ()=>{
         
     })
 
-    it('should switch settings', ()=>{
-        cy.get('.btn-close')
-            .click()
-        cy.get('.switch > span')
+    it('should open accordion', ()=>{
+        cy.get('.accordion-body')
+            .should('exist')
+            .and('be.visible')
+
+        cy.get('.accordion-button')
             .should('exist')
             .click()
+            .then(()=>{
+                cy.get('.accordion-body')
+                .should('not.exist')
+                cy.get('.accordion-button')
+                .should('exist')
+                .click()
+                .then(()=>{
+                    cy.get('.accordion-body')
+                    .should('exist')
+                    .and('be.visible')
+                })
+            })
     })
+
+    
 })

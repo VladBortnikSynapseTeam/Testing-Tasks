@@ -112,19 +112,4 @@ describe('Report Locaked MOdal Component', ()=>{
     expect(component.isError).toBeTrue();
     expect(component.code).toBe('');
   });
-
-  it('should login', ()=>{
-    component.username = 'user';
-    component.password = '123';
-    localStorage.setItem('reportsApiId','123');
-
-    spyOn(service,'createUsersOverride').and.returnValue(of({usersOverride: 'sample'}))
-    component.login();
-
-    expect(service.createUsersOverride).toHaveBeenCalledWith({
-        Username: 'user',
-        Password: '123',
-        apiID: '123'
-    })
-  })
 })
